@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="view" content="width=device-width, initial-scale=1.0" />
+    <title>List Clients | {{COMPANY_NAME}}</title>
+
+    <link rel="stylesheet" href="../../assets/css/theme.css" />
+    <link rel="stylesheet" href="../../assets/css/skeleton.css" />
+    <link rel="stylesheet" href="../../assets/css/dialog.css" />
+    <script src="../../assets/js/defaultDialog.js"></script>
+    <script src="../../assets/js/formDialog.js"></script>
+    <script src="../../assets/js/tableSkeleton.js"></script>
+    <script src="../../assets/js/toastDialog.js"></script>
+
+    <link rel="stylesheet" href="../style/admin.css" />
+    <link rel="stylesheet" href="../style/notifications.css" />
+    <script src="../script/admin.js"></script>
+    <script src="../script/footerNavigation.js"></script>
+    <script src="../script/notifications.js"></script>
+    <script src="../script/changeClientsPage.js"></script>
+
+    <link rel="stylesheet" href="./listClients.css" />
+    <link rel="stylesheet" href="./view.css" />
+    <script src="./applyForJob.js"></script>
+    <script src="./archiveClient.js"></script>
+    <script src="./fetchClients.js"></script>
+    <script src="./fetchJobs.js"></script>
+    <script src="./filterClients.js"></script>
+    <script src="./generator.js"></script>
+    <script src="./listClients.js"></script>
+    <script src="./renderClients.js"></script>
+    <script src="./searchClient.js"></script>
+    <script src="./sortClients.js"></script>
+    <script src="./submitJobApplication.js"></script>
+    <script src="./viewClient.js"></script>
+  </head>
+  <body>
+    <aside>{{ASIDE_CONTENTS}}</aside>
+    <main>
+      <header>{{HEADER_CONTENTS}}</header>
+      <section id="list_client">
+        <div id="filter_and_search_container">
+          <div id="filters">
+            <span> Date </span>
+            <button type="button" id="ascending_date" class="filter_button">
+              ▲
+            </button>
+            <button type="button" id="descending_date" class="filter_button">
+              ▼
+            </button>
+            <span> Name </span>
+            <button type="button" id="ascending_name" class="filter_button">
+              ▲
+            </button>
+            <button type="button" id="descending_name" class="filter_button">
+              ▼
+            </button>
+          </div>
+          <input
+            type="search"
+            aria-label="Name Of Client"
+            placeholder="Search clients by their name"
+            id="name_input"
+            autofocus
+          />
+          <input
+            type="button"
+            value=" 🔍 "
+            id="search_button"
+            class="positive_button"
+          />
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Mobile</th>
+              <th>Preferred Jobs</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <!-- tbody and tfoot are generated using JS -->
+        </table>
+      </section>
+    </main>
+  </body>
+</html>

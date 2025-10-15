@@ -1,0 +1,105 @@
+main {
+  border-radius: 1.6rem;
+  padding: 2rem 3.6rem 3rem 3.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--foreground-color);
+  background-color: var(--header-footer-color);
+}
+@media (prefers-color-scheme: light) {
+  main {
+    box-shadow: var(--box-shadow-for-white-boxes);
+  }
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+@media(orientation: landscape) {
+  img {
+    width: 5rem;
+    cursor: pointer;
+  }
+}
+@media(orientation: portrait) {
+  img {
+    height: 4.5rem;
+    cursor: pointer;
+  }
+}
+figcaption {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--foreground-color);
+}
+main > section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#inputs {
+  gap: 1rem;
+}
+#actions {
+  gap: 0.4rem;
+}
+
+form,
+form > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+form {
+  gap: 1.8rem;
+}
+
+input,
+button {
+  border: 1px solid var(--placeholder-color);
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  color: var(--foreground-color);
+}
+
+input {
+  padding: 0.8rem 2ch;
+  background-color: var(--input-color);
+}
+@media (orientation: landscape) {
+  input {
+    width: 24ch;
+  }
+}
+@media (orientation: portrait) {
+  input {
+    width: 20ch;
+  }
+}
+
+button {
+  padding: 0.6rem 2ch;
+  background-color: var(--header-and-footer-color);
+  transition: border var(--transition-time),
+    background-color var(--transition-time), transform var(--transition-time);
+}
+button:focus,
+button:hover {
+  border: 1px solid var(--primary-color);
+  background-color: var(--secondary-color);
+}
+button:active {
+  transform: scale(90%);
+  background-color: var(--tertiary-color);
+}

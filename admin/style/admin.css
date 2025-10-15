@@ -1,0 +1,131 @@
+body {
+  display: grid;
+  grid-template-columns: 20dvw 1fr;
+  background-color: var(--background-color);
+  --logo-bottomMargin: 2rem;
+}
+
+aside {
+  border-right: 2px solid var(--hover-color);
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  min-height: calc(100dvh - var(--logo-bottomMargin));
+}
+aside > nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+#company_logo {
+  margin: 0 auto var(--logo-bottomMargin) auto;
+  width: 4.5rem;
+  display: block;
+  cursor: pointer;
+}
+aside details {
+  margin-bottom: 1rem;
+}
+aside details > summary {
+  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+  background-color: var(--header-footer-color);
+}
+aside details > ul {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.view-existing,
+.add-new {
+  color: var(--placeholder-color);
+  transition: color var(--transition-time);
+}
+.view-existing:focus,
+.view-existing:hover,
+.add-new:focus,
+.add-new:hover {
+  transform: unset;
+}
+
+#logout_button {
+  border: 1px solid var(--foreground-color);
+  border-radius: 3rem;
+  padding: 0.5rem 1rem;
+  transition: border var(--transition-time), color var(--transition-time), transform var(--transition-time);
+}
+
+#logout_button:focus,
+#logout_button:hover {
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+#logout_button:active {
+  border: 1px solid var(--tertiary-color);
+  color: var(--tertiary-color);
+  transform: scale(92%);
+}
+
+main > header {
+  padding: 0.8rem 1rem 0.8rem 2rem;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header span {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+#notification_bell {
+  transform: translateY(-0.2rem);
+}
+#notification_bell::before {
+  content: "\1f514";
+  filter: grayscale(100%);
+  font-size: 1.6rem;
+  display: inline-block;
+  transition: filter 0.4s, transform 0.2s ease-in-out;
+}
+#notification_bell:active::before {
+  filter: unset;
+  transform: scale(90%);
+}
+#notification_bell:focus::before,
+#notification_bell:hover::before {
+  animation: jiggle 0.5s;
+}
+@keyframes jiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+}
+
+input,
+select {
+  border: 1px solid var(--hover-color);
+  border-radius: 0.4rem;
+  padding: 0.6rem 1ch;
+  font-size: 1rem;
+  color: var(--placeholder-color);
+  background-color: var(--header-footer-color);
+}
