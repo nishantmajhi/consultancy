@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="view" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/theme.css" />
+    <link rel="stylesheet" href="../../assets/css/dialog.css" />
+    <script src="../../assets/js/defaultDialog.js"></script>
+    <script src="../../assets/js/formDialog.js"></script>
+    <script src="../../assets/js/toastDialog.js"></script>
+    <title>Add Client | {{COMPANY_NAME}}</title>
+
+    <link rel="stylesheet" href="../style/admin.css" />
+    <link rel="stylesheet" href="../style/notifications.css" />
+    <link rel="stylesheet" href="./addClient.css" />
+    <script src="../script/admin.js"></script>
+    <script src="../script/notifications.js"></script>
+    <script src="./addClient.js"></script>
+    <script src="./cancel.js"></script>
+    <script src="./chooseImages.js"></script>
+    <script src="./chooseJobs.js"></script>
+    <script src="./submitNewClientForm.js"></script>
+  </head>
+  <body>
+    <aside>{{ASIDE_CONTENTS}}</aside>
+    <main>
+      <header>{{HEADER_CONTENTS}}</header>
+      <form id="new_client">
+        <section id="info">
+          <label>
+            <span class="required">Full Name</span>
+            <input
+              type="text"
+              name="name"
+              pattern="[a-zA-Z\s]+"
+              title="Please enter a valid name (letters and spaces only)."
+              required
+              autofocus
+            />
+          </label>
+          <label>
+            <span class="required">Address</span>
+            <input
+              type="text"
+              name="address"
+              pattern="[a-zA-Z0-9 .,\-]+"
+              title="Please enter a valid address (letters, numbers, spaces, commas, dots, and hyphens allowed)."
+              required
+            />
+          </label>
+          <label>
+            <span class="required">Mobile Number</span>
+            <input
+              type="text"
+              pattern="[0-9]{10}"
+              name="mobileNumber"
+              title="Please enter a valid 10-digit mobile number."
+              required
+            />
+          </label>
+          <label>
+            Email
+            <input
+              type="email"
+              name="email"
+              title="Please enter a valid email address."
+            />
+          </label>
+          <label>
+            <span class="required">Gender</span>
+            <select name="gender" required>
+              <option value="male" default>Male</option>
+              <option value="female">Female</option>
+              <option value="n/a">Prefer Not Say</option>
+            </select>
+          </label>
+          <label>
+            <span>Bike License</span>
+            <select name="bikeLicense">
+              <option value="no" default>Not Obtained</option>
+              <option value="yes">Obtained</option>
+            </select>
+          </label>
+        </section>
+
+        <section>
+          <div id="job_selector">
+            <label for="job_preferences">
+              <span class="required">Preferred Jobs</span>
+            </label>
+            <input
+              list="job_list"
+              name="jobPreferences[]"
+              placeholder="insert jobs preferred by the client or select them from the list of Vacancies"
+              onchange="updateJobList()"
+              id="job_preferences"
+            />
+            <datalist id="job_list">
+              <!-- JSON data will be populated here -->
+            </datalist>
+          </div>
+          <div id="chosen_jobs" style="display: none">
+            <!-- Jobs preferred by users will be shown here -->
+          </div>
+        </section>
+
+        <section id="pp_selector">
+          <label for="profile_picture">
+            <span class="required">Profile Pic</span>
+          </label>
+          <input
+            type="file"
+            accept="image/*"
+            name="profilePicture"
+            id="profile_picture"
+            required
+          />
+        </section>
+
+        <section id="documents">
+          <div id="drop_zone">
+            <div class="required">
+              click here to select the images of documents OR drag and drop
+              them!
+            </div>
+            <input
+              type="file"
+              name="files[]"
+              id="document_files"
+              multiple
+              style="display: none"
+            />
+          </div>
+        </section>
+        <section id="thumbnails">
+          <!-- Document preview will be shown here -->
+        </section>
+        <section id="actions">
+          <button
+            type="button"
+            onclick="cancel()"
+            class="positive_button transparent_button"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            onclick="submitForm()"
+            class="negative_button confirm_button"
+          >
+            Confirm
+          </button>
+        </section>
+      </form>
+    </main>
+  </body>
+</html>

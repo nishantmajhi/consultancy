@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/theme.css" />
+    <link rel="stylesheet" href="./assets/css/dialog.css" />
+    <script src="./assets/js/defaultDialog.js"></script>
+    <title>Home | {{COMPANY_NAME}}</title>
+
+    <link rel="stylesheet" href="./home.css" />
+    <script src="./home.js"></script>
+  </head>
+  <body>
+    <header>
+      <img src="./assets/img/logo.webp" alt="Company Logo" />
+      <img
+        src="./assets/img/admin.webp"
+        alt="Admin"
+        title="Admin Page"
+        id="admin_logo"
+      />
+    </header>
+    <main>
+      <div id="first" class="page">
+        <section id="top">
+          <h1 id="hero_text">
+            <span id="first_name"></span>
+            <span id="last_name"></span>
+          </h1>
+          <form onsubmit="submitEmail(event)">
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Send us your email address"
+              aria-label="Input email"
+            />
+            <input type="submit" value="Submit" />
+          </form>
+        </section>
+        <section id="bottom">
+          <article id="hero_ads">
+            <span class="hero_cards">
+              <h2>60+</h2>
+              <h3>Vacancies</h3>
+            </span>
+            <span class="hero_cards">
+              <h2>23+</h2>
+              <h3>Organizations</h3>
+            </span>
+            <span class="hero_cards">
+              <h2>8+</h2>
+              <h3>Benefits</h3>
+            </span>
+            <span class="hero_cards">
+              <h2>1+</h2>
+              <h3>Cities</h3>
+            </span>
+          </article>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

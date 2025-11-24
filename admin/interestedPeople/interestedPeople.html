@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="view" content="width=device-width, initial-scale=1.0" />
+    <title>List Potential Clients | {{COMPANY_NAME}}</title>
+
+    <link rel="stylesheet" href="../../assets/css/theme.css" />
+    <link rel="stylesheet" href="../../assets/css/skeleton.css" />
+    <link rel="stylesheet" href="../../assets/css/dialog.css" />
+    <script src="../../assets/js/defaultDialog.js"></script>
+    <script src="../../assets/js/formDialog.js"></script>
+    <script src="../../assets/js/tableSkeleton.js"></script>
+    <script src="../../assets/js/toastDialog.js"></script>
+
+    <link rel="stylesheet" href="../style/admin.css" />
+    <link rel="stylesheet" href="../style/notifications.css" />
+    <script src="../script/admin.js"></script>
+    <script src="../script/footerNavigation.js"></script>
+    <script src="../script/notifications.js"></script>
+
+    <link rel="stylesheet" href="./interestedPeople.css" />
+    <script src="./changePage.js"></script>
+    <script src="./fetchEmails.js"></script>
+    <script src="./interestedPeople.js"></script>
+    <script src="./removeEmail.js"></script>
+    <script src="./renderEmails.js"></script>
+  </head>
+  <body>
+    <aside>{{ASIDE_CONTENTS}}</aside>
+    <main>
+      <header>{{HEADER_CONTENTS}}</header>
+      <section id="list_email">
+        <table>
+          <thead>
+            <tr>
+              <th>S. No</th>
+              <th>Email</th>
+              <th>Submitted Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <!-- tbody and tfoot are generated using JS -->
+        </table>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/theme.css" />
+    <link rel="stylesheet" href="./login.css" />
+    <script src="./login.js"></script>
+    <title>Login | {{COMPANY_NAME}}</title>
+  </head>
+  <body>
+    <main>
+      <figure>
+        <img
+          src="../assets/img/logo.webp"
+          alt="Company Logo"
+          id="company_logo"
+        />
+        <figcaption>{{COMPANY_NAME}}</figcaption>
+      </figure>
+      <section>
+        <form method="POST" id="login">
+          <div id="inputs">
+            <input
+              type="text"
+              name="username"
+              aria-label="username"
+              placeholder="username"
+              required
+              autofocus
+            />
+            <input
+              type="password"
+              name="password"
+              aria-label="password"
+              placeholder="password"
+              required
+            />
+          </div>
+          <div id="actions">
+            <button type="submit">Login</button>
+            <a href="./forgot.php">Forgot Password?</a>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

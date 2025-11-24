@@ -1,0 +1,52 @@
+#list_email {
+  margin: 2.5rem 5rem 0 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#list_email table {
+  margin: 2.5rem 0;
+  border-collapse: collapse;
+}
+
+thead,
+tfoot {
+  background-color: var(--header-footer-color);
+}
+
+tbody td {
+  text-align: center;
+}
+
+td,
+th {
+  border: 1px solid var(--hover-color);
+}
+
+th {
+  font-size: 1rem;
+  padding: 0.8rem 2ch;
+  color: var(--placeholder-color);
+}
+
+td {
+  padding: 0.25rem 2ch;
+  font-size: 0.96rem;
+}
+
+tfoot td {
+  padding: 0.8rem 2ch 0.5rem 2ch;
+}
+
+#previous_page,
+#next_page {
+  cursor: pointer;
+}
+
+#previous_page {
+  text-align: left;
+}
+
+#next_page {
+  text-align: right;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="view" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/theme.css" />
+    <link rel="stylesheet" href="../../assets/css/dialog.css" />
+    <script src="../../assets/js/defaultDialog.js"></script>
+    <script src="../../assets/js/formDialog.js"></script>
+    <script src="../../assets/js/toastDialog.js"></script>
+    <title>Add Job | {{COMPANY_NAME}}</title>
+
+    <link rel="stylesheet" href="../style/admin.css" />
+    <link rel="stylesheet" href="../style/notifications.css" />
+    <link rel="stylesheet" href="./addJob.css" />
+    <script src="../script/admin.js"></script>
+    <script src="../script/notifications.js"></script>
+    <script src="./addJob.js"></script>
+    <script src="./cancel.js"></script>
+    <script src="./chooseSkills.js"></script>
+    <script src="./submitNewJobForm.js"></script>
+  </head>
+  <body>
+    <aside>{{ASIDE_CONTENTS}}</aside>
+    <main>
+      <header>{{HEADER_CONTENTS}}</header>
+      <form id="new_job">
+        <section id="info">
+          <label>
+            <span class="required">Name of Company</span>
+            <input
+              type="text"
+              name="name"
+              pattern="[a-zA-Z\s]+"
+              title="Please enter a valid {{COMPANY_NAME}} (letters and spaces only)."
+              required
+              autofocus
+            />
+          </label>
+          <label>
+            <span class="required">Address</span>
+            <input
+              type="text"
+              name="address"
+              pattern="[a-zA-Z0-9 .,\-]+"
+              title="Please enter a valid address (letters, numbers, commas, periods and hyphens allowed)."
+              required
+            />
+          </label>
+          <label>
+            <span class="required">Position</span>
+            <input
+              type="text"
+              name="position"
+              pattern="[a-zA-Z\s]+"
+              title="Please enter a valid position (letters and spaces only)."
+              required
+            />
+          </label>
+          <label>
+            Minimum Salary
+            <input
+              type="number"
+              name="minimumSalary"
+              value="16000"
+              min="1"
+              title="Please enter a valid salary greater than 0."
+            />
+          </label>
+          <label>
+            <span>Deadline</span>
+            <input
+              type="date"
+              name="deadline"
+              title="Please select a valid date."
+            />
+          </label>
+          <label>
+            <span class="required">Mobile Number</span>
+            <input
+              type="text"
+              pattern="\d{10}"
+              name="mobileNumber"
+              title="Please enter a 10-digit mobile number."
+              required
+            />
+          </label>
+        </section>
+
+        <section>
+          <div id="skill_selector">
+            <label for="skill_preferences">
+              <span class="required">Preferred Skills</span>
+            </label>
+            <input
+              list="skill_list"
+              name="skillPreferences[]"
+              placeholder="insert skills desired in an employee or select them from the list of available skills"
+              onchange="updateSkillList()"
+              id="skill_preferences"
+            />
+            <datalist id="skill_list">
+              <!-- JSON data will be populated here -->
+            </datalist>
+          </div>
+          <div id="chosen_skills" style="display: none">
+            <!-- Skills preferred by employer will be shown here -->
+          </div>
+        </section>
+
+        <section id="actions">
+          <button
+            type="button"
+            onclick="cancel()"
+            class="positive_button transparent_button"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            onclick="submitForm()"
+            class="negative_button confirm_button"
+          >
+            Confirm
+          </button>
+        </section>
+      </form>
+    </main>
+  </body>
+</html>

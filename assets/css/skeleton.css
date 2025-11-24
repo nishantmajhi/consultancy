@@ -1,0 +1,18 @@
+.skeleton-container {
+  padding: 0.5rem 2rem;
+}
+
+.skeleton {
+  border-radius: 0.6rem;
+  font-size: 1.4rem;
+  animation: loading 1s linear infinite alternate;
+}
+
+@keyframes loading {
+  0% {
+    background-color: var(--header-footer-color);
+  }
+  100% {
+    background-color: var(--background-color);
+  }
+}

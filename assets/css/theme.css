@@ -1,0 +1,212 @@
+:root {
+  --main-color: hsl(18, 100%, 60%);
+  --primary-color: hsl(16, 88%, 55%);
+  --secondary-color: hsl(0, 85%, 48%);
+  --tertiary-color: hsl(322, 100%, 41%);
+  --height-of-header-elements: 2.4rem;
+  --box-shadow-for-input-types: rgba(100, 100, 111, 0.2) 0px 7px 30px 0px;
+  --box-shadow-for-white-boxes: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+
+  accent-color: var(--primary-color);
+
+  --transition-time: 0.4s;
+  --linear-gradient-for-animation: linear-gradient(
+    45deg,
+    var(--main-color),
+    var(--primary-color),
+    var(--secondary-color),
+    var(--tertiary-color),
+    var(--secondary-color),
+    var(--primary-color),
+    var(--main-color)
+  );
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: hsl(210, 20%, 96%);
+    --header-footer-color: hsl(0, 0%, 100%);
+    --hover-color: hsl(220, 10%, 91%);
+    --input-color: hsl(0, 0%, 98%);
+    --foreground-color: hsl(0, 0%, 12%);
+    --placeholder-color: hsl(230, 5%, 40%);
+
+    --red-color: hsl(0, 100%, 50%);
+    --orange-color: hsl(24, 100%, 50%);
+    --green-color: hsl(137, 90%, 40%);
+    --blue-color: hsl(228, 100%, 50%);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: hsl(210, 5%, 10%);
+    --header-footer-color: hsl(0, 0%, 14%);
+    --hover-color: hsl(220, 5%, 31%);
+    --input-color: hsl(210, 5%, 23%);
+    --foreground-color: hsl(220, 8%, 85%);
+    --placeholder-color: hsl(220, 10%, 72%);
+
+    --red-color: hsl(0, 100%, 40%);
+    --orange-color: hsl(44, 100%, 50%);
+    --green-color: hsl(137, 90%, 40%);
+    --blue-color: hsl(228, 100%, 60%);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+  font-family: Arial, Helvetica, sans-serif, system-ui;
+}
+body {
+  margin: 0;
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+}
+header,
+footer {
+  background-color: var(--header-footer-color);
+}
+figure,
+dl,
+dt,
+dd,
+ul,
+ol,
+li {
+  margin: 0;
+}
+
+a,
+button,
+input[type="button"],
+details summary {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  transition: color var(--transition-time), transform var(--transition-time);
+}
+a:focus,
+a:hover {
+  transform: scale(108%);
+  color: var(--tertiary-color);
+}
+a:active {
+  transform: scale(100%);
+  color: var(--main-color);
+}
+.disabled-link {
+  pointer-events: none;
+  filter: brightness(40%);
+  color: var(--foreground-color);
+}
+
+button {
+  border: none;
+  padding: 0;
+  font-size: 0.96rem;
+  background-color: transparent;
+  color: var(--foreground-color);
+}
+.theme_button,
+.red_button,
+.green_button,
+.blue_button,
+.grey_button,
+.positive_button,
+.negative_button,
+.confirm_button,
+.transparent_button {
+  border-radius: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+  transition: transform 0.2s, color var(--transition-time),
+    background-color var(--transition-time);
+}
+.theme_button:active,
+.red_button:active,
+.green_button:active,
+.blue_button:active,
+.grey_button:active,
+.positive_button:active,
+.negative_button:active,
+.confirm_button:active,
+.transparent_button:active {
+  transform: scale(92%);
+}
+
+.theme_button {
+  color: var(--primary-color);
+}
+.red_button {
+  color: var(--red-color);
+}
+.green_button {
+  color: var(--green-color);
+}
+.blue_button {
+  color: var(--blue-color);
+}
+.grey_button {
+  color: grey;
+}
+.positive_button:hover,
+.positive_button:focus {
+  color: var(--foreground-color);
+}
+.negative_button {
+  color: var(--background-color);
+}
+.transparent_button:hover,
+.transparent_button:focus {
+  border-color: hsl(220, 5%, 61%);
+}
+@media (prefers-color-scheme: light) {
+  .confirm_button {
+    background-color: var(--placeholder-color);
+  }
+  .transparent_button {
+    border: 1px solid var(--placeholder-color);
+  }
+  .transparent_button:hover,
+  .transparent_button:focus {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  dialog::backdrop {
+    background: rgba(160, 160, 160, 0.8);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .confirm_button {
+    background-color: var(--foreground-color);
+  }
+  .transparent_button {
+    border: 1px solid var(--hover-color);
+  }
+  .transparent_button:hover,
+  .transparent_button:focus {
+    background-color: rgba(255, 255, 255, 0.075);
+  }
+  dialog::backdrop {
+    background: rgba(0, 0, 0, 0.9);
+  }
+}
+
+@keyframes linear_gradient_animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+input:focus:invalid,
+input:user-invalid {
+  outline: 2px solid orangered;
+}

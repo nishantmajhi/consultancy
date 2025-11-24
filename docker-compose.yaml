@@ -1,0 +1,17 @@
+services:
+  web:
+    container_name: consultancy-container
+    image: consultancy:local
+    pull_policy: build
+    build: .
+    ports:
+      - "1016:80"
+    volumes:
+      - uploads:/var/www/html/uploads
+    environment:
+      - TZ=Asia/Kathmandu
+    restart: unless-stopped
+
+volumes:
+  uploads:
+    driver: local

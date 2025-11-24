@@ -1,0 +1,27 @@
+<?php
+namespace Seed;
+
+class JobData {
+    public static function get() : array {
+        return [
+            ["id" => "abc_10_241014-120505", "position" => "Software Developer", "organization" => "ABC Tech Solutions", "address" => "Kathmandu - 3, Dillibazar", "salary" => 10000, "mobile" => "9800000001", "deadline" => "2024-10-20", "preferredSkills" => ["JavaScript", "React", "Node.js"]],
+            ["id" => "xyz_15_241014-131015", "position" => "Graphic Designer", "organization" => "XYZ Designs", "address" => "Pokhara - 8, Lakeside", "salary" => 15000, "mobile" => "9800000002", "deadline" => "2024-10-22", "preferredSkills" => ["Adobe Photoshop", "Illustrator", "UI/UX"]],
+            ["id" => "lmn_21_241014-140000", "position" => "Accountant", "organization" => "LMN Accounting", "address" => "Biratnagar - 4, Main Road", "salary" => 21000, "mobile" => "9800000003", "deadline" => "2024-10-25", "preferredSkills" => ["Tally", "Financial Analysis", "Taxation"]],
+            ["id" => "def_30_241014-113030", "position" => "Nurse", "organization" => "Def Medical Center", "address" => "Bhaktapur - 7, Near Durbar Square", "salary" => 30000, "mobile" => "9800000004", "deadline" => "2024-10-18", "preferredSkills" => ["Patient Care", "First Aid", "Emergency Response"]],
+            ["id" => "ghi_12_241014-101010", "position" => "Driver", "organization" => "GHI Logistics", "address" => "Itahari - 5, Bus Park", "salary" => 12000, "mobile" => "9800000005", "deadline" => "2024-10-15", "preferredSkills" => ["Heavy Vehicle Operation", "Defensive Driving", "Route Planning"]],
+            ["id" => "jkl_25_241014-150000", "position" => "Receptionist", "organization" => "JKL Hotel", "address" => "Chitwan - 1, Bharatpur", "salary" => 25000, "mobile" => "9800000006", "deadline" => "2024-10-28", "preferredSkills" => ["Customer Service", "Communication", "Front Desk Management"]],
+            ["id" => "mno_35_241014-123000", "position" => "Electrician", "organization" => "MNO Electricals", "address" => "Dharan - 9, Bazaar Area", "salary" => 35000, "mobile" => "9800000007", "deadline" => "2024-10-23", "preferredSkills" => ["Wiring", "Circuit Troubleshooting", "Installation"]],
+            ["id" => "pqr_28_241014-110000", "position" => "Chef", "organization" => "PQR Restaurant", "address" => "Lalitpur - 2, Pulchowk", "salary" => 28000, "mobile" => "9800000008", "deadline" => "2024-10-17", "preferredSkills" => ["Continental Cuisine", "Plating", "Kitchen Management"]],
+            ["id" => "stu_40_241014-121500", "position" => "Marketing Executive", "organization" => "STU Marketing", "address" => "Janakpur - 6, Mithila Road", "salary" => 40000, "mobile" => "9800000009", "deadline" => "2024-10-19", "preferredSkills" => ["SEO", "Social Media", "Campaign Management"]],
+            ["id" => "vwx_45_241014-144545", "position" => "Plumber", "organization" => "VWX Plumbing Services", "address" => "Hetauda - 3, Industrial Area", "salary" => 45000, "mobile" => "9800000010", "deadline" => "2024-10-30", "preferredSkills" => ["Pipe Fitting", "Leak Repair", "Blueprint Reading"]],
+            ["id" => "yza_50_241014-103000", "position" => "Data Analyst", "organization" => "YZA Analytics", "address" => "Birgunj - 4, Main Market", "salary" => 50000, "mobile" => "9800000011", "deadline" => "2024-10-14", "preferredSkills" => ["Data Visualization", "SQL", "Python"]],
+            ["id" => "bcd_55_241014-133030", "position" => "Security Guard", "organization" => "BCD Security", "address" => "Butwal - 7, Kalikanagar", "salary" => 55000, "mobile" => "9800000012", "deadline" => "2024-10-29", "preferredSkills" => ["Surveillance", "Patrolling", "Emergency Handling"]],
+            ["id" => "efg_60_241014-154545", "position" => "Waiter", "organization" => "EFG Cafe", "address" => "Nepalgunj - 1, Dhamboji", "salary" => 60000, "mobile" => "9800000013", "deadline" => "2024-10-21", "preferredSkills" => ["Customer Service", "Food Handling", "Communication"]],
+            ["id" => "hij_65_241014-163000", "position" => "Technician", "organization" => "HIJ Electronics", "address" => "Dhangadhi - 5, Center Road", "salary" => 65000, "mobile" => "9800000014", "deadline" => "2024-10-26", "preferredSkills" => ["Mobile Repair", "Troubleshooting", "Electronics Maintenance"]],
+            ["id" => "klm_70_241014-093030", "position" => "Carpenter", "organization" => "KLM Furniture", "address" => "Pokhara - 9, Hemja", "salary" => 70000, "mobile" => "9800000015", "deadline" => "2024-10-16", "preferredSkills" => ["Wood Cutting", "Furniture Making", "Blueprint Reading"]],
+            ["id" => "nop_75_241014-102000", "position" => "HR Manager", "organization" => "NOP Enterprises", "address" => "Bhaktapur - 6, Suryabinayak", "salary" => 75000, "mobile" => "9800000016", "deadline" => "2024-10-27", "preferredSkills" => ["Recruitment", "Employee Relations", "Performance Management"]],
+            ["id" => "qrs_80_241014-111500", "position" => "Mechanical Engineer", "organization" => "QRS Engineering", "address" => "Lalitpur - 4, Gwarko", "salary" => 80000, "mobile" => "9800000017", "deadline" => "2024-10-31", "preferredSkills" => ["AutoCAD", "Machinery Maintenance", "Project Management"]],
+            ["id" => "tuv_85_241014-161000", "position" => "IT Support Specialist", "organization" => "TUV Solutions", "address" => "Kathmandu - 10, New Baneshwor", "salary" => 85000, "mobile" => "9800000018", "deadline" => "2024-10-24", "preferredSkills" => ["Networking", "Troubleshooting", "System Administration"]]
+        ];
+    }
+}

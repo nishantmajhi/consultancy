@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="view" content="width=device-width, initial-scale=1.0" />
+    <title>Payment and Application Status | {{COMPANY_NAME}}</title>
+
+    <link rel="stylesheet" href="../assets/css/theme.css" />
+    <link rel="stylesheet" href="../assets/css/skeleton.css" />
+    <link rel="stylesheet" href="../assets/css/dialog.css" />
+    <script src="../assets/js/defaultDialog.js"></script>
+    <script src="../assets/js/formDialog.js"></script>
+    <script src="../assets/js/tableSkeleton.js"></script>
+    <script src="../assets/js/toastDialog.js"></script>
+
+    <link rel="stylesheet" href="./style/admin.css" />
+    <link rel="stylesheet" href="./style/notifications.css" />
+    <script src="./script/admin.js"></script>
+    <script src="./script/footerNavigation.js"></script>
+    <script src="./script/notifications.js"></script>
+
+    <link rel="stylesheet" href="./states.css" />
+    <script src="./changeApplicationState.js"></script>
+    <script src="./changePage.js"></script>
+    <script src="./changePaymentState.js"></script>
+    <script src="./fetchStates.js"></script>
+    <script src="./filterStates.js"></script>
+    <script src="./renderStates.js"></script>
+    <script src="./searchStates.js"></script>
+    <script src="./states.js"></script>
+    <script src="./updatePlaceholder.js"></script>
+  </head>
+  <body>
+    <aside>
+      <nav>
+        <img
+          src="../assets/img/logo.webp"
+          alt="Company Logo"
+          id="company_logo"
+        />
+
+        <details id="home" open>
+          <summary>Home</summary>
+          <ul>
+            <li class="disabled-link">
+              <a
+                href="./"
+                class="view-existing"
+                title="Payment and Application Status"
+                >Summary</a
+              >
+            </li>
+            <li>
+              <a
+                href="./interestedPeople/"
+                class="view-existing"
+                title="Interested People"
+                >Potential Clients</a
+              >
+            </li>
+          </ul>
+        </details>
+
+        <details id="job_seekers" open>
+          <summary>Clients</summary>
+          <ul>
+            <li>
+              <a
+                href="./listClients/"
+                class="view-existing"
+                title="View Clients"
+                >List all</a
+              >
+            </li>
+            <li>
+              <a href="./addClient/" class="add-new" title="Add Client"
+                >Add New</a
+              >
+            </li>
+          </ul>
+        </details>
+
+        <details id="available_jobs" open>
+          <summary>Vacancies</summary>
+          <ul>
+            <li>
+              <a href="./listJobs/" class="view-existing" title="View Vacancies"
+                >List all</a
+              >
+            </li>
+            <li>
+              <a href="./addJob/" class="add-new" title="Add Vacancy"
+                >Add New</a
+              >
+            </li>
+          </ul>
+        </details>
+
+        <details id="archived_data" open>
+          <summary>Archived</summary>
+          <ul>
+            <li>
+              <a
+                href="./archivedClients/"
+                class="view-existing"
+                title="View Old Clients"
+                >Clients</a
+              >
+            </li>
+            <li>
+              <a
+                href="./archivedJobs/"
+                class="view-existing"
+                title="View Old Jobs"
+                >Vacancies</a
+              >
+            </li>
+          </ul>
+        </details>
+      </nav>
+      <button type="button" id="logout_button">Logout</button>
+    </aside>
+    <main>
+      <header>
+        <span>Payment and Application Status</span>
+        <span id="notification_container" title="View Notifications">
+          <button
+            type="button"
+            id="notification_bell"
+            aria-label="Notification Icon"
+          ></button>
+          <section id="notifications_menu"></section>
+          <div class="notification-overlay"></div>
+        </span>
+      </header>
+      <section id="list_job">
+        <form id="filter_and_search_container">
+          <div class="filter">
+            <label class="filter_title">
+              <input type="radio" name="filter" value="job" id="job" checked />
+              Job Title
+            </label>
+            <label class="filter_title">
+              <input type="radio" name="filter" value="client" id="client" />
+              Client's Name
+            </label>
+          </div>
+          <input
+            type="search"
+            aria-label="Job Position"
+            class="text_input"
+            id="search_bar"
+            autofocus
+          />
+          <input type="submit" value=" 🔍 " id="search_button" />
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <th>Job Description</th>
+              <th>Client Name</th>
+              <th>Application</th>
+              <th>Payment</th>
+            </tr>
+          </thead>
+          <!-- tbody and tfoot are generated using JS -->
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
