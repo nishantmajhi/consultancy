@@ -1,0 +1,27 @@
+# Uploaded files are attacker-supplied content served from a directory inside
+# the document root. Nothing here may ever be executed.
+#
+# utils/Uploads.php already refuses anything that is not a PDF or an image, and
+# renames every file it accepts. This is the second layer: if a validation bug
+# ever lets an executable file through, the web server still refuses to run it.
+
+php_flag engine off
+
+<IfModule mod_php.c>
+    php_admin_flag engine off
+</IfModule>
+
+RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .php8 .phar .cgi .pl .py .sh
+RemoveType .php .phtml .php3 .php4 .php5 .php7 .php8 .phar
+
+<IfModule mod_headers.c>
+    # Stop a browser from second-guessing the declared type of a stored file.
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# Files are served inline rather than as downloads, because the admin pages
+# display documents and profile photographs in <img> elements. That is safe
+# here only because the allowlist in utils/Uploads.php admits nothing that a
+# browser will execute: no HTML, and no SVG. Adding either to that allowlist
+# would require serving these files as attachments instead, or from a separate
+# origin.

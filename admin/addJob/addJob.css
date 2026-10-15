@@ -1,0 +1,97 @@
+@media(orientation: landscape) {
+  form {
+    margin: 0 5rem 4rem 5rem;
+  }
+}
+@media(orientation: portrait) {
+  form {
+    margin: 0 2rem 3rem 2rem;
+  }
+}
+
+form > * {
+  margin-top: 2.5rem;
+}
+
+
+@media(orientation: landscape) {
+  #info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+@media(orientation: portrait) {
+  #info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
+
+#info label {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.required::before {
+  content: "* ";
+  color: red;
+}
+
+#skill_selector {
+  display: flex;
+  gap: 1rem;
+}
+@media(orientation: landscape) {
+  #skill_selector {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media(orientation: portrait) {
+  #skill_selector {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+#skill_selector label{
+  width: 14ch;
+}
+#skill_preferences {
+  flex-grow: 1;
+}
+
+#chosen_skills .skill {
+  border-radius: 0.4rem;
+  background-color: var(--header-footer-color);
+}
+#chosen_skills {
+  margin-top: 0.4rem;
+  padding: 0.5rem 0;
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+.skill {
+  padding: 0.5rem 0.5rem 0.5rem 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 0.25rem;
+}
+
+#actions {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+#actions > button {
+  border-radius: 0.4rem;
+  padding: 0.6rem 1ch;
+}

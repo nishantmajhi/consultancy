@@ -1,0 +1,72 @@
+#list_client {
+  margin: 2.5rem 5rem 0 5rem;
+  display: flex;
+  flex-direction: column;
+}
+#list_client table {
+  margin: 2.5rem 0;
+}
+#list_client input {
+  outline: transparent;
+  border: transparent;
+  font-size: 1rem;
+  color: var(--foreground-color);
+}
+
+#search_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.name_input {
+  border-radius: 1rem 0 0 1rem;
+  padding: 0.8rem 2ch;
+  width: 30dvw;
+}
+#search_button {
+  border-radius: 0 1rem 1rem 0;
+  padding: 0.74rem 2ch;
+  background-color: var(--header-footer-color);
+  transition: filter var(--transition-time);
+}
+
+table {
+  border-collapse: collapse;
+}
+thead,
+tfoot {
+  background-color: var(--header-footer-color);
+}
+td,
+th {
+  border: 1px solid var(--hover-color);
+}
+th {
+  font-size: 1rem;
+  padding: 0.8rem 2ch;
+  color: var(--placeholder-color);
+}
+td {
+  padding: 0.25rem 2ch;
+  font-size: 0.96rem;
+}
+tfoot td {
+  padding: 0.8rem 2ch 0.5rem 2ch;
+}
+.action_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+#previous_page,
+#next_page {
+  cursor: pointer;
+}
+#previous_page {
+  text-align: left;
+}
+#next_page {
+  text-align: right;
+}

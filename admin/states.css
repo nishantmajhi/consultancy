@@ -1,0 +1,67 @@
+#list_job {
+  margin: 2.5rem 5rem 0 5rem;
+  display: flex;
+  gap: 2.5rem;
+  flex-direction: column;
+}
+
+input {
+  border: transparent;
+  font-size: 1rem;
+  color: var(--foreground-color);
+  box-shadow: var(--box-shadow-for-input-types);
+}
+
+#filter_and_search_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filter {
+  border-radius: 1rem 0 0 1rem;
+  padding: 0.8rem 1rem;
+  display: flex;
+  gap: 1rem;
+  background-color: var(--header-footer-color);
+}
+
+.text_input {
+  outline: transparent;
+  border-radius: 0;
+  padding: 0.82rem 2ch;
+  width: 24dvw;
+  background-color: var(--header-footer-color);
+  box-shadow: none;
+}
+#search_button {
+  border-radius: 0 1rem 1rem 0;
+  padding: 0.74rem 2ch;
+  background-color: var(--header-footer-color);
+  transition: filter var(--transition-time);
+  box-shadow: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+thead,
+tfoot {
+  background-color: var(--header-footer-color);
+}
+td,
+th {
+  border: 1px solid var(--hover-color);
+}
+th {
+  font-size: 1rem;
+  padding: 0.8rem 2ch;
+  color: var(--placeholder-color);
+}
+td {
+  padding: 0.4rem 2ch;
+  font-size: 0.96rem;
+}
+tr td:nth-last-child(1),
+tr td:nth-last-child(2) {
+  text-align: center;
+}

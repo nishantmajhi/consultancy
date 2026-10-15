@@ -1,0 +1,83 @@
+.modal {
+  margin: 0;
+  border: 0;
+  border-radius: 0.8rem;
+  padding: 3.25rem 3rem;
+  position: absolute;
+  inset: 50% 0 0 50%;
+  transform: translate(-50%, -50%);
+  color: var(--foreground-color);
+  background-color: var(--header-footer-color);
+}
+@media(orientation: landscape) {
+  .modal {
+    min-width: 24dvw;
+  }
+}
+@media(orientation: portrait) {
+  .modal {
+    min-width: 50dvw;
+  }
+}
+
+
+.modal #title {
+  padding: 0 0.5rem 0.75rem 0.5rem;
+  border-bottom: 1px solid var(--foreground-color);
+  font-size: 1.5rem;
+}
+
+.modal #message,
+.modal #actions {
+  padding: 0 0.5rem;
+}
+.modal #message {
+  margin-top: 1.25rem;
+}
+.modal form {
+  margin-top: 1rem;
+}
+.modal #actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+.modal button {
+  font-size: 0.96rem;
+}
+
+.toast-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: fixed;
+  bottom: 4px;
+  right: 0px;
+}
+
+.toast-notification {
+  padding: 1rem;
+  display: flex;
+  gap: 8px;
+  min-width: 28ch;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 94%;
+  color: var(--foreground-color);
+  background-color: var(--header-footer-color);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+}
+.toast-notification.fade-out {
+  opacity: 0%;
+  transform: translateY(0);
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+}

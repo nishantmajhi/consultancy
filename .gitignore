@@ -1,0 +1,19 @@
+# Databases hold live client and admin data and must never be committed.
+# Create them locally by running: php database/seed.php
+db/*.sqlite
+db/*.sqlite3
+db/*.sqlite-journal
+
+# Uploaded client documents and photographs.
+uploads/*/
+
+# .env is deliberately NOT ignored: it holds only the company name and public
+# domain, both of which every deployment needs and neither of which is secret.
+# If a credential ever has to live there, add ".env" to this file and commit a
+# ".env.example" in its place first.
+
+# Editor and OS noise.
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

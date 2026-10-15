@@ -1,0 +1,121 @@
+#notification_container {
+  position: relative;
+  display: inline-block;
+}
+
+#notification_bell {
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+  background: none;
+  cursor: pointer;
+  transition: background-color var(--transition-time, 0.3s);
+}
+#notification_bell::before {
+  content: "🔔";
+}
+
+#notifications_menu {
+  position: absolute;
+  inset: auto; /* to reset */
+  top: 100%;
+  right: 0;
+  margin: 0; /* to reset */
+  border: none;
+  border-radius: 0 0 0.4rem 0.4rem;
+  padding: 1rem 2rem;
+  width: 24dvw;
+  height: 24rem;
+  font-size: 0.9rem;
+  background-color: var(--header-footer-color);
+  box-shadow: rgba(0, 0, 0, 0.15) 3px 3px 4px;
+  z-index: 10;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition-time, 0.3s) ease;
+  display: none;
+}
+
+#notification_bell.active + #notifications_menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  display: inline-block;
+}
+
+#notifications_menu h2 {
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--hover-color);
+}
+
+#notifications_menu section {
+  margin-block: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#notifications_menu dt {
+  font-weight: bolder;
+}
+
+#notifications_menu dd {
+  font-size: 0.8rem;
+  margin: 0;
+  color: var(--placeholder-color);
+  line-height: 1.4;
+}
+
+#notifications_menu dl {
+  margin: 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#notifications_menu dl:last-child {
+  border-bottom: none;
+}
+
+.notification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  display: none;
+}
+
+#notification_bell.active ~ .notification-overlay {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  #notifications_menu {
+    width: 80vw;
+    right: -2rem;
+  }
+}
+
+#notification_bell:focus {
+  outline: 2px solid var(--foreground-color, #333);
+  outline-offset: 2px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.notification-new {
+  animation: slideIn 0.3s ease-out;
+}
